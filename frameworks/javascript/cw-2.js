@@ -2,7 +2,8 @@
 try {
   var util = require('util'),
       deepEquals = require('lodash').isEqual,
-      Promise = require("bluebird");
+      Promise = require("bluebird")
+      enzyme = require("enzyme");
 
   require('./chai-display');
 
@@ -491,6 +492,10 @@ try {
   Object.defineProperty(global, 'after', {
     writable: false,
     value: Test.after
+  })
+  Object.defineProperty(global, 'enzyme', {
+    writable: false,
+    value: enzyme
   });
 
 
